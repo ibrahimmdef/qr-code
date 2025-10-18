@@ -29,15 +29,16 @@
           </form>
         </div>
 
-        <div class="output-section">
+        <div class="output-section <%= locals.generated ? 'created' : '' %>">
           <div class="qr-section">
-            <% if (qrImage){ %>
+            <% if (locals.qrImage){ %>
             <img
               src="images/<%=qrImage %>"
               alt="Generated QR Code"
               class="qr-image"
             />
             <%} else { %>
+
             <img
               src="images/git.png"
               alt="Generated QR Code"
@@ -46,7 +47,14 @@
             <% } %>
           </div>
           <div class="download-options">
-            <button class="btn download" type="button">Download PNG</button>
+            <a
+              style="text-decoration: none"
+              href="images/<%= locals.qrImage %>"
+              download
+              class="btn download download-btn"
+              type="button"
+              >Download PNG</a
+            >
             <button class="btn download outline" type="button">
               Download SVG
             </button>
@@ -54,5 +62,12 @@
         </div>
       </div>
     </div>
+    <script>
+      const svgBtn = document.querySelector(".outline");
+
+      svgBtn.addEventListener("click", () => {
+        alert("svg is not exist now");
+      });
+    </script>
   </body>
 </html>

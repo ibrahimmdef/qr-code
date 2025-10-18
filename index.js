@@ -2,8 +2,6 @@ import express from "express";
 
 import fs from "fs";
 
-import inquirer from "inquirer";
-
 import qr from "qr-image";
 
 const app = express();
@@ -17,7 +15,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { qrImage: null, generated: false });
 });
 
 app.post("/", (req, res) => {
@@ -31,12 +29,15 @@ app.post("/", (req, res) => {
 
   qr_svg.pipe(fs.createWriteStream(filePath));
 
-  fs.writeFile("url.txt", url, (err) => {
+  fs.appendFile("url.txt", url + "\n", (err) => {
     if (err) throw err;
     console.log(fileName);
   });
 
-  res.render("index", { qrImage: fileName });
+  res.render("index", {
+    qrImage: fileName,
+    generated: true,
+  });
 });
 
 app.listen(port, () => console.log("Server running on http://localhost:3000"));

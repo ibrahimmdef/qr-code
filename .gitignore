@@ -13,3 +13,25 @@ debug.log
 *.local
 *.tmp
 *.swp
+
+# QR Code generated files
+public/images/*.png
+public/images/*.jpg
+public/images/*.svg
+
+# URL history
+url.txt
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Build/Dist
+dist/
+build/
