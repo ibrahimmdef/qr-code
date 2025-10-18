@@ -31,11 +31,19 @@
 
         <div class="output-section">
           <div class="qr-section">
+            <% if (qrImage){ %>
+            <img
+              src="images/<%=qrImage %>"
+              alt="Generated QR Code"
+              class="qr-image"
+            />
+            <%} else { %>
             <img
               src="images/git.png"
               alt="Generated QR Code"
               class="qr-image"
             />
+            <% } %>
           </div>
           <div class="download-options">
             <button class="btn download" type="button">Download PNG</button>

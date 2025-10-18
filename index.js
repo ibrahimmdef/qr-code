@@ -33,7 +33,7 @@ app.post("/", (req, res) => {
 
   fs.writeFile("url.txt", url, (err) => {
     if (err) throw err;
-    console.log("Url saved!");
+    console.log(fileName);
   });
 
   res.render("index", { qrImage: fileName });
