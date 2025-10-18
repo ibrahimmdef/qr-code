@@ -1,0 +1,15 @@
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+debug.log
+
+# Misc
+*.local
+*.tmp
+*.swp
