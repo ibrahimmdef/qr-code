@@ -3,10 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>qr-code</title>
+    <title>QR Code Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <h1></h1>
+    <div class="container">
+      <h1>QR Code Generator</h1>
+
+      <div class="content">
+        <div class="input-section">
+          <form action="/" method="post">
+            <textarea
+              id="url"
+              name="url"
+              placeholder="Enter text or URL"
+              required
+            ></textarea>
+            <button class="btn primary" type="submit">Generate QR Code</button>
+          </form>
+        </div>
+
+        <div class="output-section">
+          <div class="qr-section">
+            <img
+              src="images/git.png"
+              alt="Generated QR Code"
+              class="qr-image"
+            />
+          </div>
+          <div class="download-options">
+            <button class="btn download" type="button">Download PNG</button>
+            <button class="btn download outline" type="button">
+              Download SVG
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
